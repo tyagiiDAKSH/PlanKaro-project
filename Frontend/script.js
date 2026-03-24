@@ -72,6 +72,9 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const email = document.querySelector("input[name='email']").value;
   const message = document.querySelector("textarea[name='message']").value;
 
+  btn.innerText="Sending...";
+  btn.disabled= true;
+
   try {
     const res = await 
     fetch("https://plankaro-project.onrender.com/api/contact", {
@@ -86,7 +89,9 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
     if (data.success) {
       alert("Message Sent Successfully ✅");
-      document.getElementById("contactForm").reset();
+      format.reset();
+
+      btn.innerText= "Sent ✅";
     } else {
       alert("Something went wrong ❌");
     }
