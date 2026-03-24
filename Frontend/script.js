@@ -1,5 +1,4 @@
 const BASE_URL = "https://plankaro-project.onrender.com";
-const btn = format.querySelector(".lux-btn");
 
 
 // document.addEventListener("DOMContentLoaded", function() {
@@ -73,9 +72,6 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const email = document.querySelector("input[name='email']").value;
   const message = document.querySelector("textarea[name='message']").value;
 
-  btn.innerText="Sending...";
-  btn.disabled= true;
-
   try {
     const res = await 
     fetch("https://plankaro-project.onrender.com/api/contact", {
@@ -90,9 +86,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
     if (data.success) {
       alert("Message Sent Successfully ✅");
-      form.reset();
-
-      btn.innerText= "Sent ✅";
+      document.getElementById("contactForm").reset();
     } else {
       alert("Something went wrong ❌");
     }
