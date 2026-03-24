@@ -25,18 +25,7 @@ router.post("/contact", async (req, res) => {
 
     await newMessage.save();
 
-    await transporter.sendMail({
-  from: "Work.dakshtyagi@gmail.com",
-  to: "Work.dakshtyagi@gmail.com",
-  replyTo: email,
-  subject: `Message from ${name}`,
-  html: `
-    <h3>New Message</h3>
-    <p><b>Name:</b> ${name}</p>
-    <p><b>Email:</b> ${email}</p>
-    <p><b>Message:</b> ${message}</p>
-  `
-});
+    
 
     res.status(200).json({ success: true, message: "Message saved!" });
   } catch (error) {
