@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>About Us - PlanKaro</title>
+    <link rel="stylesheet" href="a.css">
+
+</head>
+<!-- <script src="script.js"></script> -->
+
+<body>
+
+    <!-- Header -->
+     <header>
+        <div class="logo">
+            Plan<span>Karo</span>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <div class="nav-container">
+            <nav id="navbar">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="CYE.html">Create Your Event</a></li>
+                    <li><a href="services.html">Packages</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div id="authButtons">
+                <button class="btn" onclick="window.location.href='login-signup.html'">
+                    Login/Signup
+                </button>
+            </div>
+
+            <div id="userBox" class="user-box">
+                <span id="userName"></span>
+                <div class="dropdown" id="dropdown">
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>We Create Unforgettable Experiences</h1>
+        <p>At PlanKaro, we help you plan your dream events with the best vendors and seamless execution.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="luxury-section">
+
+        <div class="luxury-header">
+            <h2>Designed For Unforgettable Moments</h2>
+            <p>
+                We craft timeless celebrations with elegance, precision,
+                and attention to every luxurious detail.
+            </p>
+        </div>
+
+        <div class="luxury-gallery">
+
+            <div class="luxury-card">
+                <img src="/Images/Elite-deco.jpg" alt="">
+                <div class="luxury-overlay">
+                    <div class="gold-line"></div>
+                    <h3>Luxury Weddings</h3>
+                    <p>Royal decor & premium execution</p>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <img src="/Images/4.jpg" alt="">
+                <div class="luxury-overlay">
+                    <div class="gold-line"></div>
+                    <h3>Elite Parties</h3>
+                    <p>Where elegance meets celebration</p>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <img src="/Images/Corporate.jpg" alt="">
+                <div class="luxury-overlay">
+                    <div class="gold-line"></div>
+                    <h3>Corporate Prestige</h3>
+                    <p>Impactful & refined experiences</p>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <img src="/Images/Outdoor.jpg" alt="">
+                <div class="luxury-overlay">
+                    <div class="gold-line"></div>
+                    <h3>Outdoor Grandeur</h3>
+                    <p>Luxury under the stars</p>
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <img src="/Images/5.jpg" alt="">
+                <div class="luxury-overlay">
+                    <div class="gold-line"></div>
+                    <h3>Birthday Celebration</h3>
+                    <p>Memories that soarkle forever</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-section">
+
+        <h2 class="why-title">Why Choose PlanKaro?</h2>
+
+        <div class="why-cards">
+
+            <div class="why-card">
+                <div class="icon-circle">⭐</div>
+                <h3>Trusted Vendors</h3>
+                <p>We partner with verified and top-rated event professionals.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon-circle">💰</div>
+                <h3>Affordable Packages</h3>
+                <p>Flexible pricing options tailored to your needs.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon-circle">✨</div>
+                <h3>Seamless Experience</h3>
+                <p>From planning to execution, we handle everything smoothly.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon-circle">🎨</div>
+                <h3>Custom Themes</h3>
+                <p>Personalized decor concepts crafted just for your event.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon-circle">⏳</div>
+                <h3>On-Time Execution</h3>
+                <p>Every detail delivered exactly on schedule.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon-circle">🤝</div>
+                <h3>Dedicated Support</h3>
+                <p>Our team stays with you throughout the journey.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="member">
+                <img src="images/team1.jpg" alt="">
+                <h4>Daksh Tyagi</h4>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="member">
+                <img src="images/team2.jpg" alt="">
+                <h4>Aarohi Tyagi</h4>
+                <p>Creative Director</p>
+            </div>
+            <div class="member">
+                <img src="images/team3.jpg" alt="">
+                <h4>Rahul Sharma</h4>
+                <p>Event Manager</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>PlanKaro</h3>
+                <p>Your complete event planning partner.
+                    Find the best vendors and create unforgettable moments.</p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Decoration</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">DJ & Music</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: support@plankaro.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <div class="social-icons">
+                    <span>🌐</span>
+                    <span>📘</span>
+                    <span>📸</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PlanKaro. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

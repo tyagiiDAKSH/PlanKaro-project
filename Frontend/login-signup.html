@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>PlanKaro | Access</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="Login-Signup.css">
+</head>
+
+
+<body>
+
+<div class="auth-card">
+
+<div class="logo" onclick="goToPage()">Plan<span>Karo</span></div>
+<!-- <a href="Index.html" class="logo">Plan<span>Karo</span></a> -->
+
+<!-- Role Tabs -->
+<div class="role-tabs">
+<div class="role-indicator"></div>
+<button class="role active" onclick="switchRole(0)">User</button>
+<button class="role" onclick="switchRole(1)">Vendor</button>
+<button class="role" onclick="switchRole(2)">Admin</button>
+</div>
+
+<!-- Login Signup Tabs -->
+<div class="tabs">
+<div class="tab-indicator"></div>
+<button class="tab active" onclick="switchTab(0)">Login</button>
+<button class="tab" onclick="switchTab(1)">Signup</button>
+</div>
+
+<form onsubmit="handleAuth(event)">
+
+<div class="input-group" id="nameField" style="display:none;">
+<input type="text">
+<label>Full Name</label>
+</div>
+
+<div class="input-group">
+<input type="email" id="loginEmail" required>
+<label>Email Address</label>
+</div>
+
+<div class="input-group">
+<input type="password" id="loginPassword" required>
+<label>Password</label>
+</div>
+
+<button type="submit" class="auth-btn">Login</button>
+
+</form>
+
+</div>
+
+
+</body>
+<script src="auth.js"></script>
+</html>

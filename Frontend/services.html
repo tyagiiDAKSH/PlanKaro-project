@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="services.css">
+    <title>PlanKaro | Premium Services</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            Plan<span>Karo</span>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <div class="nav-container">
+            <nav id="navbar">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="CYE.html">Create Your Event</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div id="authButtons">
+                <button class="btn" onclick="window.location.href='login-signup.html'">
+                    Login/Signup
+                </button>
+            </div>
+
+            <div id="userBox" class="user-box">
+                <span id="userName"></span>
+                <div class="dropdown" id="dropdown">
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h1>Event Packages</h1>
+
+    <div class="container" id="cardContainer"></div>
+
+    <div id="packageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="packageContainer"></div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>PlanKaro</h3>
+                <p>Your complete event planning partner.
+                    Find the best vendors and create unforgettable moments.</p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Decoration</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">DJ & Music</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: support@plankaro.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <div class="social-icons">
+                    <span>🌐</span>
+                    <span>📘</span>
+                    <span>📸</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PlanKaro. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const toggle = document.getElementById("menu-toggle");
+            const navbar = document.getElementById("navbar");
+
+            if (toggle && navbar) {
+                toggle.addEventListener("click", function () {
+                    navbar.classList.toggle("active");
+                });
+            }
+
+            let user = JSON.parse(localStorage.getItem("user"));
+
+            if (user) {
+                document.getElementById("authButtons").style.display = "none";
+                document.getElementById("userBox").style.display = "block"; // ⭐ ADD THIS
+                document.getElementById("userName").innerText = "Hi, " + user.name;
+            } else {
+                document.getElementById("userBox").style.display = "none"; // ⭐ ADD THIS
+            }
+
+            document.getElementById("userName").onclick = function () {
+                let drop = document.getElementById("dropdown");
+                drop.classList.toggle("show");
+
+            }
+
+        });
+
+        function logout() {
+            localStorage.removeItem("isAdminLoggedIn");
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "login-signup.html";
+        }
+
+        // 20 SERVICES
+        const services = [
+            "Wedding Decoration", "Wedding Catering", "Photography", "DJ & Music",
+            "Birthday Decoration", "Corporate Catering", "Anniversary Setup",
+            "Pre Wedding Shoot", "Luxury Entry Gate", "Haldi Setup",
+            "Mehndi Decor", "Engagement Stage", "Live Band",
+            "LED Wall Setup", "Bridal Makeup", "Groom Styling",
+            "Theme Lighting", "Sound System", "Event Anchoring", "Fireworks Show"
+        ];
+
+        const container = document.getElementById("cardContainer");
+
+        services.forEach((service, index) => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `
+    <h3>${service}</h3>
+    <p>Premium curated experience</p>
+    <h4>Starting ₹${(index + 2) * 10000}</h4>
+    <button class="view-btn" data-service="${service}">View Packages</button>
+  `;
+            container.appendChild(card);
+        });
+
+        const modal = document.getElementById("packageModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const packageContainer = document.getElementById("packageContainer");
+        const closeBtn = document.querySelector(".close-btn");
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("view-btn")) {
+                modal.style.display = "Flex";
+                const serviceName = e.target.getAttribute("data-service");
+                modalTitle.innerText = serviceName + " Packages";
+
+                packageContainer.innerHTML = `
+    <div class="package-wrapper">
+
+      <div class="package-card">
+        <h3>Silver</h3>
+        <ul>
+          <li>✔ Basic ${serviceName} Setup</li>
+          <li>✔ Standard Equipment</li>
+          <li>✔ 4 Hours Service</li>
+        </ul>
+        <h4>₹${50000 + Math.floor(Math.random() * 10000)}</h4>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="package-card recommended">
+        <h3>Gold ⭐</h3>
+        <ul>
+          <li>✔ Premium ${serviceName}</li>
+          <li>✔ HD Quality</li>
+          <li>✔ 8 Hours Service</li>
+          <li>✔ Highlight Coverage</li>
+        </ul>
+        <h4>₹${100000 + Math.floor(Math.random() * 20000)}</h4>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="package-card">
+        <h3>Platinum</h3>
+        <ul>
+          <li>✔ Luxury Full ${serviceName}</li>
+          <li>✔ Full Day Service</li>
+          <li>✔ Exclusive Add-ons</li>
+          <li>✔ VIP Support</li>
+        </ul>
+        <h4>₹${150000 + Math.floor(Math.random() * 30000)}</h4>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+
+    </div>
+    `;
+
+                modal.style.display = "flex";
+            }
+
+            if (e.target.classList.contains("buy-btn")) {
+                alert("Redirecting to Booking Page...");
+            }
+
+        });
+
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+
+    </script>
+
+</body>
+
+</html>

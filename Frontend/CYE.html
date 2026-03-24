@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Event | PlanKaro</title>
+<link rel="stylesheet" href="create-event.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+      <!-- Header -->
+    <header>
+    <div class="logo">
+        Plan<span>Karo</span>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+     <div class="nav-container">
+        <nav id="navbar">
+            
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="CYE.html">Create Your Event</a></li>
+                <li><a href="services.html">Packages</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+         <div id="authButtons">
+    <button class="btn" onclick="window.location.href='login-signup.html'">
+        Login/Signup
+    </button>
+</div>
+
+<div id="userBox" class="user-box">
+    <span id="userName"></span>
+    <div class="dropdown" id="dropdown">
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+    </div> 
+</header>
+
+<div class="page-wrapper">
+<div class="event-card">
+
+<h2>Create Your <span>Event</span></h2>
+
+<form id="eventForm">
+
+<div class="form-row">
+<div class="input-group">
+<label>Event Type</label>
+<select id="type" required>
+<option value="">Select Event</option>
+<option>Wedding</option>
+<option>Birthday Party</option>
+<option>Corporate Event</option>
+<option>Anniversary</option>
+<option>Festival Celebration</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Event Date</label>
+<input id="date" type="date" required>
+</div>
+</div>
+
+<div class="form-row">
+<div class="input-group">
+<label>Number of Guests</label>
+<input id="guests" type="number" placeholder="e.g. 150" required>
+</div>
+
+<div class="input-group">
+<label>Budget (₹)</label>
+<input id="budget" type="number" placeholder="e.g. 200000" required>
+</div>
+</div>
+
+<div class="input-group">
+<label>Event Location</label>
+<input id="location" type="text" placeholder="City or Venue Name" required>
+</div>
+
+<div class="input-group">
+<label>Special Requirements</label>
+<textarea id="requirements" rows="4" placeholder="Decoration theme, catering, music etc."></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Submit Event</button>
+
+</form>
+
+</div>
+</div>
+
+ <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>PlanKaro</h3>
+                <p>Your complete event planning partner.
+                    Find the best vendors and create unforgettable moments.</p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Events</a></li>
+                    <li><a href=".html">Categories</a></li>
+                    <li><a href="contactUs.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Decoration</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">DJ & Music</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: support@plankaro.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <div class="social-icons">
+                    <span>🌐</span>
+                    <span>📘</span>
+                    <span>📸</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PlanKaro. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="createEvent.js"></script>
+</body>
+</html>
