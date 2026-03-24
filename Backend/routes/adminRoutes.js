@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Admin = require("../models/admin");
 
+router.get("/", (req, res) => {
+  res.send("Admin route working 🚀");
+});
+
 // Admin Login
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
