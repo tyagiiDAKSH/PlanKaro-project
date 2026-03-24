@@ -12,7 +12,10 @@ router.post("/login", async (req, res) => {
   const vendor = await Vendor.findOne({ email, password });
 
   if (!vendor) {
-    return res.json({ message: "Invalid vendor credentials" });
+    return res.json({
+    success: false,
+    message: "Invalid credentials"
+});
   }
 
   res.json({
@@ -23,18 +26,24 @@ router.post("/login", async (req, res) => {
 });
 
 // ✅ Vendor Signup
-router.post("/signup", async (req, res) => {
+router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
   const exist = await Vendor.findOne({ email });
   if (exist) {
-    return res.json({ message: "Vendor already exists" });
+    return res.json({
+    success: false,
+    message: "Vendor already exists"
+});
   }
 
   const newVendor = new Vendor({ name, email, password });
   await newVendor.save();
 
-  res.json({ message: "Signup successful" });
+  res.json({
+    success: true,
+    message: "Vendor registered successfully"
+});
 });
 
 router.get("/test", (req, res) => {

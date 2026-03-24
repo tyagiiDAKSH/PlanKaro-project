@@ -3,19 +3,26 @@ const router = express.Router();
 const User = require("../models/user");
 
 // Signup
-router.post("/signup", async (req, res) => {
+router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
   const exist = await User.findOne({ email });
   if (exist) {
-    return res.json({ message: "User already exists" });
+    return res.json({
+      success: false,
+      message: "User already exists"
+    });
   }
 
   const newUser = new User({ name, email, password });
   await newUser.save();
 
-  res.json({ message: "Signup successful" });
+  res.json({
+    success: true,
+    message: "User registered successfully"
+  });
 });
+
 
 // Login
 router.post("/login", async (req, res) => {
@@ -24,7 +31,10 @@ router.post("/login", async (req, res) => {
   const user = await User.findOne({ email, password });
 
   if (!user) {
-    return res.json({ message: "Invalid credentials" });
+    return res.json({
+      success: false,
+      message: "Invalid credentials"
+    });
   }
 
   res.json({
