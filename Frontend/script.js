@@ -1,4 +1,5 @@
 const BASE_URL = "https://plankaro-project.onrender.com";
+const btn = format.querySelector(".lux-btn");
 
 
 // document.addEventListener("DOMContentLoaded", function() {
@@ -89,7 +90,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
     if (data.success) {
       alert("Message Sent Successfully ✅");
-      format.reset();
+      form.reset();
 
       btn.innerText= "Sent ✅";
     } else {
