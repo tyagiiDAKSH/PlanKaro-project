@@ -1,4 +1,3 @@
-console.log("JS Loaded");
 const BASE_URL = "https://plankaro-project.onrender.com";
 
 
@@ -74,7 +73,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const message = document.querySelector("textarea[name='message']").value;
 
   try {
-    const res = await fetch(`${BASE_URL}/api/contact`, {
+    const res = await 
+    fetch("https://plankaro-project.onrender.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
