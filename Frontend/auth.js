@@ -1,4 +1,4 @@
-const BASE_URL = "http://192.168.1.7:5000";
+const BASE_URL = "https://plankaro-project.onrender.com";
 
 let currentRole = "user";
 
@@ -108,10 +108,10 @@ async function signupUser(event){
   let url = "";
 
 if(currentRole === "vendor"){
-  url = `${BASE_URL}/vendor/signup`;
+  url = `${BASE_URL}/vendor/register`;
 } 
 else {
-  url = `${BASE_URL}/user/signup`;
+  url = `${BASE_URL}/user/register`;
 }
 
 const res = await fetch(url, {
@@ -126,10 +126,9 @@ const res = await fetch(url, {
 
   alert(data.message);
 
-  if(data.message === "Signup successful"){
-    // signup ke baad login tab pe aa ja
-    switchTab(0);
-  }
+  if(data.message.toLowerCase().includes("success")){
+  switchTab(0);
+}
 }
 
 function handleAuth(event){

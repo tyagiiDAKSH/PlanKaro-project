@@ -1,5 +1,5 @@
 console.log("JS Loaded");
-const BASE_URL = "http://192.168.1.7:5000";
+const BASE_URL = "https://plankaro-project.onrender.com";
 
 
 // document.addEventListener("DOMContentLoaded", function() {

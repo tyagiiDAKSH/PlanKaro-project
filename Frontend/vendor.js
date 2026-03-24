@@ -1,4 +1,4 @@
-const BASE_URL = "http://192.168.1.7:5000";
+const BASE_URL = "https://plankaro-project.onrender.com";
 
 async function loadEvents() {
   const res = await fetch(`${BASE_URL}/event/all`);
